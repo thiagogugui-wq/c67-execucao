@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f6f8">
+<title>C67 Execução</title>
+<style>
+:root{--bg:#f3f5f7;--panel:#ffffff;--panel2:#f7f8fa;--line:#e0e4e9;--text:#202630;--muted:#697586;--gold:#b88620;--green:#168653;--red:#d94343;--blue:#347fca}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f8f9fb,#eef1f4 55%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.app{max-width:520px;margin:auto;min-height:100vh;padding:18px 16px 34px}
+header{display:flex;align-items:center;gap:13px;padding:5px 0 18px}
+.logo{width:64px;height:64px;border-radius:15px;object-fit:cover;border:1px solid #d5d9df}
+.brand{min-width:0}.brand small{color:#98701c;font-weight:800;letter-spacing:1.8px;font-size:10px}.brand h1{font-size:21px;margin:2px 0 0;letter-spacing:.4px}.brand p{margin:2px 0;color:var(--muted);font-size:11px}
+.pill{margin-left:auto;border:1px solid #e4d4ad;color:#896319;background:#fffaf0;padding:6px 9px;border-radius:99px;font-size:10px;font-weight:800;white-space:nowrap}
+h2{font-size:17px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px;line-height:1.5;margin:0 0 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 7px 22px #2430440c}
+.step{display:flex;align-items:center;gap:9px;margin-bottom:12px}.num{width:25px;height:25px;border-radius:8px;background:#fbf2dc;color:#896319;display:grid;place-items:center;font-weight:900;font-size:12px}
+label{display:block;color:#4d5968;font-size:12px;font-weight:700;margin:13px 0 6px}
+input[type=number]{width:100%;background:#fbfcfd;border:1px solid #d9dfe6;border-radius:11px;color:#202630;padding:12px;font-size:17px;font-weight:800;outline:none}
+input:focus{border-color:#c59a3a;box-shadow:0 0 0 3px #c59a3a20}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.cat{padding:11px 9px;border-radius:12px;background:#fafbfd;border:1px solid #e4e8ed}.cat label{margin:0 0 7px;font-size:11px}.cat input{padding:10px 7px;text-align:center;font-size:18px}
+.cat.cola{border-top:3px solid var(--green)}.cat.flavor{border-top:3px solid var(--gold)}.cat.non{border-top:3px solid var(--blue)}
+.btn{border:0;border-radius:12px;padding:13px 15px;font-weight:900;font-size:14px;cursor:pointer;width:100%;margin-top:12px}
+.primary{background:linear-gradient(90deg,#d8ad51,#f0d58e);color:#28200e}.secondary{background:#f0f2f5;color:#303946;border:1px solid #dce1e7}
+.results{display:none}.total{font-size:31px;font-weight:900;letter-spacing:-1px}.muted{color:var(--muted);font-size:11px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.bar{height:9px;border-radius:20px;background:#e9edf1;overflow:hidden;margin:8px 0 5px}.fill{height:100%;border-radius:20px}
+.metric{padding:11px 0;border-bottom:1px solid #edf0f3}.metric:last-child{border:0}.metric b{font-size:13px}.metric strong{font-size:18px}
+.delta{font-size:12px;font-weight:800}.good{color:var(--green)}.bad{color:#d94343}.gold{color:#98701c}
+.notice{font-size:11px;color:#566171;line-height:1.5;background:#f3f5f7;border:1px solid #e6e9ed;border-radius:11px;padding:11px;margin-top:12px}
+.footer{text-align:center;color:#8993a0;font-size:10px;padding:18px 0}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+<img class="logo" src="logo-c67.png" alt="Escudo C67">
+<div class="brand"><small>GV GRANDE PORTO ALEGRE</small><h1>C67 EXECUÇÃO</h1><p>Assistente de execução em loja</p></div>
+<div class="pill">PROTÓTIPO</div>
+</header>
+
+<section class="card">
+<div class="step"><span class="num">1</span><h2>Informe a contagem</h2></div>
+<p class="sub">Informe o total de frentes e quantas pertencem a cada categoria. A soma é conferida automaticamente.</p>
+<label for="total">Total de frentes da geladeira</label>
+<input id="total" type="number" min="1" max="500" value="40">
+<div class="grid">
+<div class="cat cola"><label for="colas">Colas · 50%</label><input id="colas" type="number" min="0" value="16"></div>
+<div class="cat flavor"><label for="sabores">Sabores · 30%</label><input id="sabores" type="number" min="0" value="16"></div>
+<div class="cat non"><label for="nao">Não carb. · 20%</label><input id="nao" type="number" min="0" value="8"></div>
+</div>
+<button class="btn primary" id="calc">CALCULAR DISTRIBUIÇÃO</button>
+</section>
+
+<section class="card results" id="results">
+<div class="step"><span class="num">2</span><h2>Resultado da execução</h2></div>
+<div class="row"><div><div class="muted">Frentes contabilizadas</div><div class="total" id="counted">40/40</div></div><div style="text-align:right"><div class="muted">Aderência ao padrão</div><div class="total gold" id="adherence">—</div></div></div>
+<div id="metrics"></div>
+<div class="notice" id="advice"></div>
+<button class="btn secondary" onclick="window.print()">IMPRIMIR / SALVAR RELATÓRIO</button>
+</section>
+<div class="footer">C67 • FOCO · DISCIPLINA · RESULTADO<br>Ferramenta demonstrativa — validar contagens antes de executar.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+function calc(){
+ const total=Math.max(0,Math.floor(+$('total').value||0));
+ const vals=[Math.max(0,Math.floor(+$('colas').value||0)),Math.max(0,Math.floor(+$('sabores').value||0)),Math.max(0,Math.floor(+$('nao').value||0))];
+ const names=['Colas','Sabores','Não carbonatados'],targets=[.5,.3,.2],colors=['#22b573','#e5b84b','#58a6ff'];
+ const counted=vals.reduce((a,b)=>a+b,0);
+ const target=[Math.floor(total*.5),Math.floor(total*.3),0];target[2]=total-target[0]-target[1];
+ const metrics=names.map((name,i)=>{
+  const pct=counted?vals[i]/counted*100:0,goal=targets[i]*100,diff=target[i]-vals[i];
+  return `<div class="metric"><div class="row"><b>${name}</b><span class="muted">${pct.toFixed(1).replace('.',',')}% atual · ${goal}% meta</span></div><div class="bar"><div class="fill" style="width:${Math.min(100,pct)}%;background:${colors[i]}"></div></div><div class="row"><span class="muted">Atual: ${vals[i]} frentes · Meta: ${target[i]}</span><span class="delta ${diff>0?'bad':diff<0?'good':'gold'}">${diff>0?'+'+diff+' necessárias':diff<0?Math.abs(diff)+' a mais':'OK'}</span></div></div>`;
+ }).join('');
+ const adherence=total?Math.max(0,100-(Math.abs(vals[0]-(counted*.5))+Math.abs(vals[1]-(counted*.3))+Math.abs(vals[2]-(counted*.2)))/Math.max(1,counted)*50):0;
+ $('counted').textContent=counted+'/'+total;
+ $('adherence').textContent=adherence.toFixed(0)+'%';
+ $('metrics').innerHTML=metrics;
+ let advice=counted!==total?`Atenção: a soma das categorias (${counted}) não corresponde ao total informado (${total}). Confira a contagem.`:
+ `Para atingir a distribuição de referência em ${total} frentes: ${target[0]} colas, ${target[1]} sabores e ${target[2]} não carbonatados.`;
+ $('advice').textContent=advice;
+ $('results').style.display='block';
+ $('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('calc').addEventListener('click',calc);
+['total','colas','sabores','nao'].forEach(id=>$(id).addEventListener('input',()=>{$('results').style.display='none'}));
+calc();
+</script>
+</body></html>
