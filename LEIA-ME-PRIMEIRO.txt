@@ -1,0 +1,19 @@
+C67 EXECUÇÃO — PACOTE PARA COMPILAÇÃO NA NUVEM
+
+Este pacote contém o projeto Android com a interface clara C67 e um workflow Codemagic.
+
+COMO GERAR O APK PELO CELULAR
+1. Crie uma conta no GitHub e um repositório novo, por exemplo: c67-execucao.
+2. Extraia este ZIP no celular (app Arquivos/Files).
+3. No repositório GitHub, use Add file > Upload files e envie TODO o conteúdo desta pasta para a raiz do repositório. O arquivo codemagic.yaml precisa ficar na raiz, ao lado de settings.gradle e build.gradle.
+4. Crie uma conta em Codemagic e conecte o GitHub.
+5. Em Codemagic, Add application, escolha o repositório c67-execucao e Android/Native Android.
+6. Inicie o workflow "C67 Execução - APK Android".
+7. Quando o build terminar, baixe o artefato APK em Artifacts.
+
+NOTAS
+- Este workflow gera um APK debug instalável para teste interno.
+- Não é uma versão de publicação na Play Store.
+- O primeiro build baixa Gradle 8.9 no ambiente de compilação e usa o Android SDK do Codemagic.
+- O APK ainda deve ser instalado e testado no aparelho antes de distribuir para toda a equipe.
+- Não compartilhe senhas, tokens ou chaves de assinatura no repositório.
