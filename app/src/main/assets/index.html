@@ -12,7 +12,7 @@
 header{display:flex;align-items:center;gap:13px;padding:5px 0 18px}
 .logo{width:64px;height:64px;border-radius:15px;object-fit:cover;border:1px solid #d5d9df}
 .brand{min-width:0}.brand small{color:#98701c;font-weight:800;letter-spacing:1.8px;font-size:10px}.brand h1{font-size:21px;margin:2px 0 0;letter-spacing:.4px}.brand p{margin:2px 0;color:var(--muted);font-size:11px}
-.pill{margin-left:auto;border:1px solid #e4d4ad;color:#896319;background:#fffaf0;padding:6px 9px;border-radius:99px;font-size:10px;font-weight:800;white-space:nowrap}
+.version{margin-left:auto;color:#98701c;font-size:10px;font-weight:900;letter-spacing:1px;white-space:nowrap}
 h2{font-size:17px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px;line-height:1.5;margin:0 0 14px}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 7px 22px #2430440c}
 .step{display:flex;align-items:center;gap:9px;margin-bottom:12px}.num{width:25px;height:25px;border-radius:8px;background:#fbf2dc;color:#896319;display:grid;place-items:center;font-weight:900;font-size:12px}
@@ -28,7 +28,32 @@ input:focus{border-color:#c59a3a;box-shadow:0 0 0 3px #c59a3a20}
 .metric{padding:11px 0;border-bottom:1px solid #edf0f3}.metric:last-child{border:0}.metric b{font-size:13px}.metric strong{font-size:18px}
 .delta{font-size:12px;font-weight:800}.good{color:var(--green)}.bad{color:#d94343}.gold{color:#98701c}
 .notice{font-size:11px;color:#566171;line-height:1.5;background:#f3f5f7;border:1px solid #e6e9ed;border-radius:11px;padding:11px;margin-top:12px}
+.fridge-wrap{margin-top:16px;background:linear-gradient(145deg,#fff,#f4f6f8);border:1px solid #e0e4e9;border-radius:18px;padding:14px;box-shadow:0 7px 22px #2430440c}
+.fridge-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.fridge-head strong{font-size:14px}.fridge-head span{font-size:10px;color:var(--muted)}
+.fridge{max-width:280px;margin:0 auto;background:linear-gradient(90deg,#a80f19,#ed1c2b 18%,#c8101e 86%,#790b12);border:5px solid #a90d18;border-radius:18px 18px 12px 12px;padding:10px 10px 12px;box-shadow:inset 4px 0 8px #ffffff45,0 8px 18px #7e111b30;position:relative}
+.fridge:before{content:'Coca-Cola';display:block;text-align:center;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:bold;font-size:18px;padding:1px 0 8px;text-shadow:0 1px 2px #69000a}
+.fridge-glass{background:linear-gradient(110deg,#d9eff4aa,#ffffff40 25%,#8cb3c244 70%,#ffffff66);border:3px solid #d8e1e5;border-radius:7px;padding:7px 6px;box-shadow:inset 0 0 12px #ffffffaa}
+.shelf{height:43px;display:flex;align-items:flex-end;justify-content:center;gap:4px;padding:2px 2px 5px;border-bottom:4px solid #d8e0e4;position:relative;overflow:hidden}
+.shelf:last-child{border-bottom:0}.bottle{width:12px;height:27px;border-radius:4px 4px 3px 3px;position:relative;box-shadow:inset 2px 0 2px #ffffff70,1px 1px 2px #24304455;flex:0 0 auto}
+.bottle:before{content:'';position:absolute;width:5px;height:5px;left:3.5px;top:-4px;border-radius:2px 2px 0 0;background:inherit;filter:brightness(1.25)}
+.bottle:after{content:'';position:absolute;left:1px;right:1px;top:10px;height:7px;background:#fff;border-radius:1px;opacity:.9}
+.bottle.cola{background:linear-gradient(90deg,#220d0b,#54110f 55%,#190807)}.bottle.flavor{background:linear-gradient(90deg,#e65b0b,#ff9c21 55%,#b83208)}.bottle.non{background:linear-gradient(90deg,#087c55,#22b477 55%,#07563d)}
+.fridge-foot{display:flex;justify-content:space-between;gap:8px;margin-top:10px;font-size:10px;color:#657181}.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:9px;justify-content:center}.legend span{font-size:10px;color:#586474;display:flex;align-items:center;gap:4px}.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.live-note{text-align:center;font-size:11px;color:#697586;margin:9px 0 0;line-height:1.45}
 .footer{text-align:center;color:#8993a0;font-size:10px;padding:18px 0}
+
+.home-menu{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 18px}
+.menu-tile{border:1px solid #e0e4e9;border-radius:18px;background:linear-gradient(145deg,#fff,#f6f7f9);padding:18px 12px;text-align:left;box-shadow:0 7px 22px #2430440c;cursor:pointer;min-height:128px;color:var(--text)}
+.menu-tile .tile-icon{font-size:30px;display:block;margin-bottom:12px}.menu-tile b{display:block;font-size:16px}.menu-tile small{display:block;color:var(--muted);font-size:11px;line-height:1.4;margin-top:5px}
+.menu-tile.active{border:2px solid #c49a42;background:#fffaf0}
+.view{display:none}.view.active{display:block}
+.field{width:100%;background:#fbfcfd;border:1px solid #d9dfe6;border-radius:11px;color:#202630;padding:13px;font-size:15px;outline:none}
+.field:focus{border-color:#c59a3a;box-shadow:0 0 0 3px #c59a3a20}
+.item-list{margin-top:12px}.item-row{padding:12px 0;border-bottom:1px solid #edf0f3;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.item-row:last-child{border:0}.item-row b{font-size:12px;line-height:1.4}.item-row small{display:block;color:var(--muted);margin-top:3px}.remove{border:0;background:#fff0f0;color:#c33;border-radius:8px;padding:7px 10px;font-weight:800}
+.share-preview{white-space:pre-wrap;background:#f5f7f9;border:1px dashed #cbd2da;border-radius:12px;padding:12px;font-size:12px;line-height:1.5;color:#303946;min-height:60px}
+.btn.whatsapp{background:#168653;color:#fff}.btn.copy{background:#eef1f4;color:#303946;border:1px solid #dce1e7}
+.back{border:0;background:transparent;color:#98701c;font-weight:800;padding:6px 0;margin-bottom:8px;cursor:pointer}
+
 </style>
 </head>
 <body>
@@ -36,9 +61,13 @@ input:focus{border-color:#c59a3a;box-shadow:0 0 0 3px #c59a3a20}
 <header>
 <img class="logo" src="logo-c67.png" alt="Escudo C67">
 <div class="brand"><small>GV GRANDE PORTO ALEGRE</small><h1>C67 EXECUÇÃO</h1><p>Assistente de execução em loja</p></div>
-<div class="pill">PROTÓTIPO</div>
+<div class="version">VERSÃO 4</div>
 </header>
-
+<nav class="home-menu" aria-label="Módulos do aplicativo">
+<button class="menu-tile active" id="goFridge" type="button"><span class="tile-icon">🧊</span><b>GELADEIRA</b><small>Calculadora de distribuição e visualização do abastecimento</small></button>
+<button class="menu-tile" id="goRupture" type="button"><span class="tile-icon">📋</span><b>ITENS EM FALTA</b><small>Registrar ruptura e sugerir quantidade para reposição</small></button>
+</nav>
+<div id="fridgeView" class="view active">
 <section class="card">
 <div class="step"><span class="num">1</span><h2>Informe a contagem</h2></div>
 <p class="sub">Informe o total de frentes e quantas pertencem a cada categoria. A soma é conferida automaticamente.</p>
@@ -59,10 +88,55 @@ input:focus{border-color:#c59a3a;box-shadow:0 0 0 3px #c59a3a20}
 <div class="notice" id="advice"></div>
 <button class="btn secondary" onclick="window.print()">IMPRIMIR / SALVAR RELATÓRIO</button>
 </section>
-<div class="footer">C67 • FOCO · DISCIPLINA · RESULTADO<br>Ferramenta demonstrativa — validar contagens antes de executar.</div>
+<section class="fridge-wrap" aria-live="polite">
+ <div class="fridge-head"><strong>Visualização do abastecimento</strong><span id="fridgeStatus">Prévia ao vivo</span></div>
+ <div class="fridge"><div class="fridge-glass"><div class="shelf" id="shelfColas"></div><div class="shelf" id="shelfSabores"></div><div class="shelf" id="shelfNao"></div></div></div>
+ <div class="legend"><span><i class="dot" style="background:#32100d"></i>Colas</span><span><i class="dot" style="background:#ef811b"></i>Sabores</span><span><i class="dot" style="background:#159967"></i>Não carbonatados</span></div>
+ <p class="live-note" id="fridgeCaption">Preencha as quantidades para visualizar a distribuição na geladeira.</p>
+</section>
+<div class="footer">C67 • FOCO · DISCIPLINA · RESULTADO</div>
 </div>
+<section id="ruptureView" class="view">
+<button class="back" id="backHome" type="button">← VOLTAR AO MENU</button>
+<section class="card">
+<div class="step"><span class="num">1</span><h2>Registrar item em falta</h2></div>
+<p class="sub">Selecione o produto que está em ruptura e informe a quantidade sugerida para reposição.</p>
+<label for="productSelect">Produto em falta</label>
+<select id="productSelect" class="field"><option value="">Selecione um produto da lista</option><option value="COCA-COLA ZERO - PET 200ML">COCA-COLA ZERO - PET 200ML</option><option value="COCA-COLA ORIGINAL - LATA 350ML OU LATA SLEEK 310ML">COCA-COLA ORIGINAL - LATA 350ML OU LATA SLEEK 310ML</option><option value="SPRITE - LATA 350ML">SPRITE - LATA 350ML</option><option value="FANTA - LATA 350ML">FANTA - LATA 350ML</option><option value="COCA-COLA ORIGINAL - PET 600ML">COCA-COLA ORIGINAL - PET 600ML</option><option value="COCA-COLA ORIGINAL - PET 1,5L OU PET 1L">COCA-COLA ORIGINAL - PET 1,5L OU PET 1L</option><option value="SPRITE LEMON FRESH - PET 1,5L OU SCHWEPPES - PET 1,5L">SPRITE LEMON FRESH - PET 1,5L OU SCHWEPPES - PET 1,5L</option><option value="COCA-COLA ORIGINAL - PET 2L">COCA-COLA ORIGINAL - PET 2L</option><option value="COCA-COLA ZERO - PET 2L OU PET 1,5L">COCA-COLA ZERO - PET 2L OU PET 1,5L</option><option value="FANTA - PET 2L">FANTA - PET 2L</option><option value="SPRITE - PET 2L">SPRITE - PET 2L</option><option value="CHARRUA - PET 2L">CHARRUA - PET 2L</option><option value="COCA-COLA ORIGINAL - PET 3L">COCA-COLA ORIGINAL - PET 3L</option><option value="COCA-COLA ZERO - LATA 350ML OU LATA 310ML">COCA-COLA ZERO - LATA 350ML OU LATA 310ML</option><option value="COCA-COLA ORIGINAL - PET 200ML">COCA-COLA ORIGINAL - PET 200ML</option><option value="MULTIPACK DECORADO COCA-COLA ORIGINAL - LATA 350ML">MULTIPACK DECORADO COCA-COLA ORIGINAL - LATA 350ML</option><option value="MULTIPACK DECORADO COCA-COLA PET 200ML">MULTIPACK DECORADO COCA-COLA PET 200ML</option><option value="FANTA LARANJA OU SPRITE - PET 200ML">FANTA LARANJA OU SPRITE - PET 200ML</option><option value="DUAL COCA-COLA ORIGINAL + FANTA LARANJA">DUAL COCA-COLA ORIGINAL + FANTA LARANJA</option><option value="DUAL COCA-COLA ORIGINAL + SPRITE">DUAL COCA-COLA ORIGINAL + SPRITE</option><option value="CRYSTAL C/GÁS OU CRYSTAL S/G - PET 1,5L">CRYSTAL C/GÁS OU CRYSTAL S/G - PET 1,5L</option><option value="CRYSTAL C/GÁS OU CRYSTAL S/G - PET 500ML OU CRYSTAL SABORES - PET 510ML">CRYSTAL C/GÁS OU CRYSTAL S/G - PET 500ML OU CRYSTAL SABORES - PET 510ML</option><option value="POWERADE MOUNTAIN BLAST REGULAR - PET 500ML">POWERADE MOUNTAIN BLAST REGULAR - PET 500ML</option><option value="DEL VALLE KAPO - TP 200ML">DEL VALLE KAPO - TP 200ML</option><option value="DEL VALLE FRUT - PET 450ML">DEL VALLE FRUT - PET 450ML</option><option value="DEL VALLE NÉCTAR - LT 290ML">DEL VALLE NÉCTAR - LT 290ML</option><option value="DEL VALLE NÉCTAR - PET 1L">DEL VALLE NÉCTAR - PET 1L</option><option value="DEL VALLE FRUT - PET 1,5L">DEL VALLE FRUT - PET 1,5L</option><option value="1 ITEM ARTD (SPRITE ABSOLUT OU SCHWEPPES MIXED)">1 ITEM ARTD (SPRITE ABSOLUT OU SCHWEPPES MIXED)</option></select>
+<label for="suggestedQty">Quantidade sugerida</label>
+<input id="suggestedQty" type="number" min="1" step="1" placeholder="Ex.: 12">
+<button class="btn primary" id="addItem" type="button">ADICIONAR ITEM À LISTA</button>
+</section>
+<section class="card">
+<div class="row"><h2>Itens selecionados</h2><span class="muted" id="itemCount">0 itens</span></div>
+<div id="itemList" class="item-list"><p class="sub">Nenhum item adicionado ainda.</p></div>
+<div class="step" style="margin-top:18px"><span class="num">1</span><h2>Identificação da loja</h2></div>
+<p class="sub">Preenchimento opcional. Se informar, os dados também irão na mensagem do WhatsApp.</p>
+<label for="storeName">Nome fantasia da loja (opcional)</label>
+<input id="storeName" class="field" type="text" placeholder="Ex.: Loja Centro">
+<label for="storeCode">Matrícula (opcional)</label>
+<input id="storeCode" class="field" type="text" inputmode="numeric" placeholder="Matrícula da loja">
+<label for="promoterName">Nome do promotor (opcional)</label>
+<input id="promoterName" class="field" type="text" placeholder="Nome do promotor">
+<label for="notes">Observação (opcional)</label>
+<input id="notes" class="field" type="text" placeholder="Ex.: priorizar reposição no próximo pedido">
+<div class="step" style="margin-top:18px"><span class="num">2</span><h2>Mensagem para WhatsApp</h2></div>
+<div id="messagePreview" class="share-preview">Adicione pelo menos um produto para montar a mensagem.</div>
+<button class="btn whatsapp" id="sendWhatsApp" type="button">ENVIAR PARA WHATSAPP</button>
+<button class="btn copy" id="copyMessage" type="button">COPIAR MENSAGEM</button>
+<p class="muted" style="margin-top:9px">O botão do WhatsApp abre a conversa com a mensagem pronta para revisar e enviar. O aplicativo não envia sem sua confirmação.</p>
+</section>
+</section>
 <script>
 const $=id=>document.getElementById(id);
+function renderFridge(){
+ const ids=['colas','sabores','nao'],shelves=['shelfColas','shelfSabores','shelfNao'],classes=['cola','flavor','non'];
+ const vals=ids.map(id=>Math.max(0,Math.floor(+$ (id).value||0)));
+ const total=Math.max(0,Math.floor(+$('total').value||0));
+ vals.forEach((v,i)=>{const n=Math.min(16,v);$(shelves[i]).innerHTML=Array.from({length:n},()=>`<i class="bottle ${classes[i]}"></i>`).join('')+(v>16?`<small style="font-size:9px;color:#455">+${v-16}</small>`:'')});
+ const sum=vals.reduce((a,b)=>a+b,0);$('fridgeStatus').textContent=sum===total?'Contagem fechada':'Contagem parcial';
+ $('fridgeCaption').textContent=`${vals[0]} colas · ${vals[1]} sabores · ${vals[2]} não carbonatados | ${sum} de ${total} frentes preenchidas. A imagem é uma simulação visual da distribuição.`;
+}
 function calc(){
  const total=Math.max(0,Math.floor(+$('total').value||0));
  const vals=[Math.max(0,Math.floor(+$('colas').value||0)),Math.max(0,Math.floor(+$('sabores').value||0)),Math.max(0,Math.floor(+$('nao').value||0))];
@@ -83,8 +157,55 @@ function calc(){
  $('results').style.display='block';
  $('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
+
+const ruptureItems=[];
+function showView(which){
+ const isFridge=which==='fridge';
+ $('fridgeView').classList.toggle('active',isFridge);$('ruptureView').classList.toggle('active',!isFridge);
+ $('goFridge').classList.toggle('active',isFridge);$('goRupture').classList.toggle('active',!isFridge);
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+$('goFridge').addEventListener('click',()=>showView('fridge'));
+$('goRupture').addEventListener('click',()=>showView('rupture'));
+$('backHome').addEventListener('click',()=>showView('fridge'));
+function makeMessage(){
+ const store=$('storeName').value.trim(),code=$('storeCode').value.trim(),promoter=$('promoterName').value.trim(),notes=$('notes').value.trim();
+ let msg='*C67 EXECUÇÃO | ITENS EM FALTA*';
+ if(store)msg+='\nNome fantasia da loja: '+store;
+ if(code)msg+='\nMatrícula da loja: '+code;
+ if(promoter)msg+='\nPromotor: '+promoter;
+ msg+='\n\n*Itens em falta / sugestão de pedido:*';
+ ruptureItems.forEach((it,i)=>{msg+=`\n${i+1}. ${it.name} — *${it.qty} un.*`;});
+ if(notes)msg+='\n\nObservação: '+notes;
+ msg+='\n\nEnviado pelo C67 Execução.';
+ return msg;
+}
+function renderItems(){
+ $('itemCount').textContent=ruptureItems.length+' '+(ruptureItems.length===1?'item':'itens');
+ $('itemList').innerHTML=ruptureItems.length?ruptureItems.map((it,i)=>`<div class="item-row"><div><b>${it.name}</b><small>Quantidade sugerida: ${it.qty} un.</small></div><button class="remove" type="button" data-remove="${i}">REMOVER</button></div>`).join(''):'<p class="sub">Nenhum item adicionado ainda.</p>';
+ $('messagePreview').textContent=ruptureItems.length?makeMessage():'Adicione pelo menos um produto para montar a mensagem.';
+ document.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>{ruptureItems.splice(Number(btn.dataset.remove),1);renderItems()}));
+}
+$('addItem').addEventListener('click',()=>{
+ const name=$('productSelect').value,qty=Math.floor(Number($('suggestedQty').value));
+ if(!name){alert('Selecione um produto.');return}if(!Number.isFinite(qty)||qty<1){alert('Informe uma quantidade sugerida maior que zero.');return}
+ const existing=ruptureItems.find(x=>x.name===name);
+ if(existing)existing.qty+=qty;else ruptureItems.push({name,qty});
+ $('productSelect').value='';$('suggestedQty').value='';renderItems();
+});
+$('storeName').addEventListener('input',renderItems);$('storeCode').addEventListener('input',renderItems);$('notes').addEventListener('input',renderItems);
+$('copyMessage').addEventListener('click',async()=>{
+ if(!ruptureItems.length){alert('Adicione pelo menos um item.');return}
+ const msg=makeMessage();
+ try{await navigator.clipboard.writeText(msg);alert('Mensagem copiada! Agora é só colar no WhatsApp.')}catch(e){const ta=document.createElement('textarea');ta.value=msg;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();alert('Mensagem copiada! Agora é só colar no WhatsApp.')}
+});
+$('sendWhatsApp').addEventListener('click',()=>{
+ if(!ruptureItems.length){alert('Adicione pelo menos um item.');return}
+ const url='https://wa.me/?text='+encodeURIComponent(makeMessage());window.open(url,'_blank');
+});
+
 $('calc').addEventListener('click',calc);
-['total','colas','sabores','nao'].forEach(id=>$(id).addEventListener('input',()=>{$('results').style.display='none'}));
-calc();
+['total','colas','sabores','nao'].forEach(id=>$(id).addEventListener('input',()=>{$('results').style.display='none';renderFridge()}));
+renderFridge();calc();
 </script>
 </body></html>
